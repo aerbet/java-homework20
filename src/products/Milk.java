@@ -14,5 +14,4 @@ public class Milk extends Product {
     public String toString() {
         return name;
     }
-
 }

@@ -1,5 +1,7 @@
 package products;
 
+import java.time.LocalDate;
+
 public class Fish extends Product {
     public Fish() {
         super("Fish", 20);

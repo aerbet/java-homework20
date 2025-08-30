@@ -3,7 +3,7 @@ package products;
 public class Salt extends Product {
 
     public Salt() {
-        super("Salt", Integer.MAX_VALUE);
+        super("Salt", Double.POSITIVE_INFINITY);
     }
 
     @Override
