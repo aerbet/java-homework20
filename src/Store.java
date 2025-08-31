@@ -7,9 +7,6 @@ import java.util.Random;
 public class Store {
     private final Random rnd = new Random();
     private final Product[] products = new Product[20];
-//    private final Product[] product = {new Milk(), new Salt(), new Fish(), new Corn(), new Stew()};
-//    private Place icebox = Place.ICEBOX;
-//    private Place showcase = Place.SHOWCASE;
 
     public Store() {
         doInspection();
@@ -20,36 +17,16 @@ public class Store {
         printTitle();
         printLabel();
         for (Product p : products) {
-            System.out.printf(" %-7s | %17s |  %-12s | %12s | %s%n",
+            System.out.printf(" %-7s | %15s |  %-13s | %12s | %s%n",
                     p.toString(),
-                    p.getProducedOn().format(DateTimeFormatter.ofPattern("dd MMMM, yyyy")),
+                    p.getProducedOn().format(DateTimeFormatter.ofPattern("dd MMM yyyy")), // у меня вывод на русском, по этому формат сделал таким
                     p.getPlace(),
-                    p.getExpirationDate(),
+                    String.format("%.0f",p.getExpirationDate()),
                     p.isFresh()
             );
         }
         printLabel();
     }
-
-//    public String placeProduct() {
-//        int index = rnd.nextInt(2) + 1;
-//        String placement;
-//        if (index == 1) {
-//            placement = icebox.toString();
-//        } else {
-//            placement = showcase.toString();
-//        }
-//
-//        return placement;
-//    }
-
-//    public String produceDates() {
-//        LocalDate date = LocalDate.now().minusDays(rnd.nextInt(200) + 1);
-//
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM, yyyy");
-//
-//        return date.format(formatter);
-//    }
 
     public void fillProducts() {
         for (int i = 0; i < products.length; i++) {
@@ -80,18 +57,18 @@ public class Store {
     }
 
     public void printTitle() {
-        System.out.printf(" %44s%n%-8s | %17s | %10s | %10s | %5s%n",
+        System.out.printf(" %40s%n%-8s | %15s | %13s | %10s | %5s%n",
                 "Inspection result.",
-                "Product",
+                " Product",
                 "Produced on",
-                "Storage place",
+                " Storage place",
                 "S. life days",
                 "Fresh"
         );
     }
 
     public void printLabel() {
-        System.out.println("---------+-------------------+---------------+--------------+---------");
+        System.out.println("---------+-----------------+----------------+--------------+---------");
     }
 
 }

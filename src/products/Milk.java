@@ -10,6 +10,7 @@ public class Milk extends Product {
 
     @Override
     public boolean isFresh() {
-        return producedOn.plusDays(60).isAfter(LocalDate.now());
+        double resultDate = place == Place.SHOWCASE ? expirationDate / 2 : expirationDate;
+        return producedOn.plusDays((long) resultDate).isAfter(LocalDate.now());
     }
 }

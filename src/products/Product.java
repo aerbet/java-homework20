@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public abstract class Product {
     protected String name;
-    protected int expirationDate;
+    protected double expirationDate;
     protected LocalDate producedOn;
     protected Place place;
 
-    protected Product(String name, int expirationDate, LocalDate producedOn) {
+    protected Product(String name, double expirationDate, LocalDate producedOn) {
         this.name = name;
         this.expirationDate = expirationDate;
         this.producedOn = producedOn;
@@ -16,11 +16,7 @@ public abstract class Product {
 
     public abstract boolean isFresh();
 
-    public String getName() {
-        return name;
-    }
-
-    public int getExpirationDate() {
+    public double getExpirationDate() {
         return this.expirationDate;
     }
 
@@ -34,10 +30,6 @@ public abstract class Product {
 
     public void setPlace(Place place) {
         this.place = place;
-    }
-
-    public void setProducedOn(LocalDate producedOn) {
-        this.producedOn = producedOn;
     }
 
     @Override

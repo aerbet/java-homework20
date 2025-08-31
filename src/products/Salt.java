@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Salt extends Product {
 
     public Salt(LocalDate producedOn) {
-        super("Salt", Integer.MAX_VALUE, producedOn);
+        super("Salt", Double.POSITIVE_INFINITY, producedOn);
     }
 
     @Override
