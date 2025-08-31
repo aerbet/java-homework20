@@ -1,3 +1,5 @@
+package products;
+
 public enum Place {
     SHOWCASE("Showcase"),
     ICEBOX("Icebox");

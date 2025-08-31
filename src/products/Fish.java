@@ -3,17 +3,12 @@ package products;
 import java.time.LocalDate;
 
 public class Fish extends Product {
-    public Fish() {
-        super("Fish", 20);
+    public Fish(LocalDate producedOn) {
+        super("Fish", 20, producedOn);
     }
 
     @Override
     public boolean isFresh() {
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        return producedOn.plusDays(20).isAfter(LocalDate.now());
     }
 }

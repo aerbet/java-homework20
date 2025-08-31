@@ -1,18 +1,16 @@
 package products;
 
+import java.time.LocalDate;
+
 public class Salt extends Product {
 
-    public Salt() {
-        super("Salt", Double.POSITIVE_INFINITY);
+    public Salt(LocalDate producedOn) {
+        super("Salt", Integer.MAX_VALUE, producedOn);
     }
 
     @Override
     public boolean isFresh() {
-        return false;
+        return true;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }

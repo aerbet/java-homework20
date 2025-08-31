@@ -1,18 +1,15 @@
 package products;
 
+import java.time.LocalDate;
+
 public class Stew extends Product {
 
-    public Stew() {
-        super("Stew", 180);
+    public Stew(LocalDate producedOn) {
+        super("Stew", 180, producedOn);
     }
 
     @Override
     public boolean isFresh() {
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        return producedOn.plusDays(180).isAfter(LocalDate.now());
     }
 }

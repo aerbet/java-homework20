@@ -3,17 +3,12 @@ package products;
 import java.time.LocalDate;
 
 public class Corn extends Product {
-    public Corn() {
-        super("Corn", 150);
-    }
-
-    @Override
-    public String toString() {
-        return name;
+    public Corn(LocalDate producedOn) {
+        super("Corn", 150, producedOn);
     }
 
     @Override
     public boolean isFresh() {
-        return false;
+        return producedOn.plusDays(150).isAfter(LocalDate.now());
     }
 }

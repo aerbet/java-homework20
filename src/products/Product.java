@@ -1,20 +1,47 @@
 package products;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 public abstract class Product {
     protected String name;
-    protected double expirationDate;
+    protected int expirationDate;
+    protected LocalDate producedOn;
+    protected Place place;
 
-    protected Product(String name, double expirationDate) {
+    protected Product(String name, int expirationDate, LocalDate producedOn) {
         this.name = name;
         this.expirationDate = expirationDate;
+        this.producedOn = producedOn;
     }
 
     public abstract boolean isFresh();
 
-    public double getExpirationDate() {
+    public String getName() {
+        return name;
+    }
+
+    public int getExpirationDate() {
         return this.expirationDate;
+    }
+
+    public LocalDate getProducedOn() {
+        return producedOn;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
+    public void setProducedOn(LocalDate producedOn) {
+        this.producedOn = producedOn;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

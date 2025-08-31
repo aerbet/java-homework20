@@ -1,17 +1,15 @@
 package products;
 
+import java.time.LocalDate;
+
 public class Milk extends Product {
-    public Milk() {
-        super("Milk", 60);
+
+    public Milk(LocalDate producedOn) {
+        super("Milk", 60, producedOn);
     }
 
     @Override
     public boolean isFresh() {
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        return producedOn.plusDays(60).isAfter(LocalDate.now());
     }
 }
